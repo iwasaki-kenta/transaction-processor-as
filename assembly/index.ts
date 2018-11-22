@@ -1,4 +1,4 @@
-import {load_tag, InternalProcess, decode_and_create_contract} from "./wavelet/service";
+import {decode_and_create_contract, InternalProcess, load_tag} from "./wavelet/service";
 import "allocator/tlsf";
 
 export function process(): i32 {

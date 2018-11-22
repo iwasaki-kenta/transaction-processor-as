@@ -13,9 +13,9 @@
  (type $FUNCSIG$ii (func (param i32) (result i32)))
  (type $FUNCSIG$iiii (func (param i32 i32 i32) (result i32)))
  (import "env" "abort" (func $~lib/env/abort (param i32 i32 i32 i32)))
- (import "env" "_tag_len" (func $assembly/wavelet/service/index/env._tag_len (result i32)))
- (import "env" "_tag" (func $assembly/wavelet/service/index/env._tag (param i32) (result i32)))
- (import "env" "_decode_and_create_contract" (func $assembly/wavelet/service/index/env._decode_and_create_contract (result i32)))
+ (import "env" "_tag_len" (func $assembly/wavelet/service/index/_tag_len (result i32)))
+ (import "env" "_tag" (func $assembly/wavelet/service/index/_tag (param i32) (result i32)))
+ (import "env" "_decode_and_create_contract" (func $assembly/wavelet/service/index/_decode_and_create_contract (result i32)))
  (global $~lib/allocator/tlsf/ROOT (mut i32) (i32.const 0))
  (global $assembly/wavelet/service/index/InternalProcess.Ignore (mut i32) (i32.const 2))
  (memory $0 1)
@@ -5909,12 +5909,12 @@
    (call $~lib/string/String.__eq
     (block (result i32)
      (drop
-      (call $assembly/wavelet/service/index/env._tag
+      (call $assembly/wavelet/service/index/_tag
        (call $~lib/arraybuffer/ArrayBuffer#get:data
         (tee_local $1
          (call $~lib/arraybuffer/ArrayBuffer#constructor
           (tee_local $0
-           (call $assembly/wavelet/service/index/env._tag_len)
+           (call $assembly/wavelet/service/index/_tag_len)
           )
          )
         )
@@ -5931,7 +5931,7 @@
    )
    ;;@ assembly/index.ts:7:34
    (return
-    (call $assembly/wavelet/service/index/env._decode_and_create_contract)
+    (call $assembly/wavelet/service/index/_decode_and_create_contract)
    )
   )
   ;;@ assembly/index.ts:11:27

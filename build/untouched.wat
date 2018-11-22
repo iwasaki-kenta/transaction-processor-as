@@ -10,9 +10,9 @@
  (type $iiiiii (func (param i32 i32 i32 i32 i32) (result i32)))
  (type $v (func))
  (import "env" "abort" (func $~lib/env/abort (param i32 i32 i32 i32)))
- (import "env" "_tag_len" (func $assembly/wavelet/service/index/env._tag_len (result i32)))
- (import "env" "_tag" (func $assembly/wavelet/service/index/env._tag (param i32) (result i32)))
- (import "env" "_decode_and_create_contract" (func $assembly/wavelet/service/index/env._decode_and_create_contract (result i32)))
+ (import "env" "_tag_len" (func $assembly/wavelet/service/index/_tag_len (result i32)))
+ (import "env" "_tag" (func $assembly/wavelet/service/index/_tag (param i32) (result i32)))
+ (import "env" "_decode_and_create_contract" (func $assembly/wavelet/service/index/_decode_and_create_contract (result i32)))
  (global $~lib/internal/allocator/AL_BITS i32 (i32.const 3))
  (global $~lib/internal/allocator/AL_SIZE i32 (i32.const 8))
  (global $~lib/internal/allocator/AL_MASK i32 (i32.const 7))
@@ -6797,38 +6797,38 @@
  (func $assembly/wavelet/service/index/load_tag (; 32 ;) (type $i) (result i32)
   (local $0 i32)
   (local $1 i32)
-  ;;@ assembly/wavelet/service/index.ts:28:4
+  ;;@ assembly/wavelet/service/index.ts:32:4
   (set_local $0
-   ;;@ assembly/wavelet/service/index.ts:28:21
-   (call $assembly/wavelet/service/index/env._tag_len)
+   ;;@ assembly/wavelet/service/index.ts:32:17
+   (call $assembly/wavelet/service/index/_tag_len)
   )
-  ;;@ assembly/wavelet/service/index.ts:29:4
+  ;;@ assembly/wavelet/service/index.ts:33:4
   (set_local $1
-   ;;@ assembly/wavelet/service/index.ts:29:18
+   ;;@ assembly/wavelet/service/index.ts:33:18
    (call $~lib/arraybuffer/ArrayBuffer#constructor
     (i32.const 0)
-    ;;@ assembly/wavelet/service/index.ts:29:34
+    ;;@ assembly/wavelet/service/index.ts:33:34
     (get_local $0)
     ;;@ ~lib/arraybuffer.ts:15:42
     (i32.const 0)
    )
   )
-  ;;@ assembly/wavelet/service/index.ts:31:8
+  ;;@ assembly/wavelet/service/index.ts:35:4
   (drop
-   (call $assembly/wavelet/service/index/env._tag
-    ;;@ assembly/wavelet/service/index.ts:31:13
+   (call $assembly/wavelet/service/index/_tag
+    ;;@ assembly/wavelet/service/index.ts:35:9
     (call $~lib/arraybuffer/ArrayBuffer#get:data
      (get_local $1)
     )
    )
   )
-  ;;@ assembly/wavelet/service/index.ts:33:47
+  ;;@ assembly/wavelet/service/index.ts:37:47
   (call $~lib/string/String.fromUTF8
-   ;;@ assembly/wavelet/service/index.ts:33:27
+   ;;@ assembly/wavelet/service/index.ts:37:27
    (call $~lib/arraybuffer/ArrayBuffer#get:data
     (get_local $1)
    )
-   ;;@ assembly/wavelet/service/index.ts:33:41
+   ;;@ assembly/wavelet/service/index.ts:37:41
    (get_local $0)
   )
  )
@@ -7011,8 +7011,8 @@
   )
  )
  (func $assembly/wavelet/service/index/decode_and_create_contract (; 35 ;) (type $i) (result i32)
-  ;;@ assembly/wavelet/service/index.ts:46:43
-  (call $assembly/wavelet/service/index/env._decode_and_create_contract)
+  ;;@ assembly/wavelet/service/index.ts:50:39
+  (call $assembly/wavelet/service/index/_decode_and_create_contract)
  )
  (func $assembly/index/process (; 36 ;) (type $i) (result i32)
   (local $0 i32)
